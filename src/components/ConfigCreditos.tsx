@@ -13,7 +13,7 @@ interface Creditos {
 }
 
 /** Avisado ao salvar: o saldo do menu lateral recarrega na hora */
-export const EVENTO_CREDITOS = 'autosuporte:creditos';
+export const EVENTO_CREDITOS = 'bm-help:creditos';
 
 /** Data de hoje no horário local (Brasília), "aaaa-mm-dd" */
 function hoje(): string {
@@ -61,7 +61,7 @@ export const ConfigCreditos: React.FC<{ onToast: (msg: string) => void }> = ({ o
 
       <p className="text-xs text-stone-600 dark:text-stone-300">
         A Anthropic não informa o saldo pela API. Informe o saldo que aparece no Console (menu Créditos) e a data em que você o viu. O menu
-        mostra esse valor menos o custo das conversas e mapas do autoSuporte desde então, a preço de tabela, atualizado a cada 5 minutos. Uso
+        mostra esse valor menos o custo das conversas e mapas do bm-help desde então, a preço de tabela, atualizado a cada 5 minutos. Uso
         fora do app (ex.: Playground) não entra. Ao comprar créditos, atualize o saldo e a data.
       </p>
 

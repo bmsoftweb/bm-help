@@ -59,7 +59,7 @@ export function iaDoUsuario(config: string | null): IaUsuario {
  */
 export async function criarAgente(c: Anthropic, system: string) {
   const env = await c.beta.environments.create({
-    name: 'autosuporte',
+    name: 'bm-help',
     config: { type: 'cloud', networking: { type: 'limited' } },
   });
   const agent = await c.beta.agents.create({

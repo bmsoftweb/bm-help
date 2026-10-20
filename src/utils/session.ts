@@ -6,8 +6,8 @@
  * - Desmarcada: a sessão fica no sessionStorage (termina ao fechar o navegador).
  */
 
-const SESSAO = 'autosuporte_sessao';
-const LEMBRETE = 'autosuporte_lembrar';
+const SESSAO = 'bm-help_sessao';
+const LEMBRETE = 'bm-help_lembrar';
 
 export interface Usuario {
   nome: string;

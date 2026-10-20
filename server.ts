@@ -18,7 +18,7 @@ async function iniciar() {
     app.use(express.static(dist));
     app.get('*', (_req, res) => res.sendFile(path.join(dist, 'index.html')));
   }
-  app.listen(PORT, '0.0.0.0', () => console.log(`autoSuporte em http://localhost:${PORT}`));
+  app.listen(PORT, '0.0.0.0', () => console.log(`bm-help em http://localhost:${PORT}`));
 }
 
 iniciar().catch((err) => {

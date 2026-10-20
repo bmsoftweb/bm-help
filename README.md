@@ -1,4 +1,4 @@
-# autoSuporte
+# bm-help
 
 O cliente final entra, escolhe o sistema, digita a dúvida (e, se quiser, cola ou anexa um print da tela) e recebe a resposta.
 

@@ -6,8 +6,8 @@ import { Usuario } from '../utils/session';
 import { EVENTO_CREDITOS } from './ConfigCreditos';
 import { ConfirmDialog } from './ConfirmDialog';
 
-const CHAVE_RECOLHIDO = 'autosuporte_menu_recolhido';
-const CHAVE_GRUPOS = 'autosuporte_menu_grupos_fechados';
+const CHAVE_RECOLHIDO = 'bm-help_menu_recolhido';
+const CHAVE_GRUPOS = 'bm-help_menu_grupos_fechados';
 
 /** Opções de cadastro do menu (só administradores); o id é o nome do recurso em server/schema.ts */
 const CADASTROS: { id: string; label: string; icone: LucideIcon }[] = [
@@ -112,7 +112,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ sistemas, ativo, onAbrir, usua
             <Headset className="w-5 h-5" />
           </div>
           <div className={rec ? 'hidden' : 'min-w-0'}>
-            <h1 className="text-sm font-bold text-stone-900 dark:text-white leading-tight truncate">autoSuporte</h1>
+            <h1 className="text-sm font-bold text-stone-900 dark:text-white leading-tight truncate">bm-help</h1>
             <p className="text-[11px] text-stone-500 dark:text-stone-400 truncate">Dúvidas sobre os sistemas</p>
           </div>
         </div>
@@ -129,7 +129,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ sistemas, ativo, onAbrir, usua
 
       {/* Navegação: os sistemas que o cliente contratou */}
       <div className="flex-1 overflow-y-auto py-4">
-        {!rec && <div className="px-4 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-400">Sistemas</div>}
+        {!rec && <div className="px-4 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-blue-500 dark:text-blue-400">Sistemas</div>}
         {rec
           ? sistemas.map((s) => botao(`chat:${s.id}`, s.nome, MessagesSquare, rec))
           : (
@@ -144,11 +144,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ sistemas, ativo, onAbrir, usua
                       type="button"
                       onClick={() => alternarGrupo(g)}
                       aria-expanded={aberto}
-                      className="w-full flex items-center gap-1.5 px-4 pt-2.5 pb-1 text-[11px] font-semibold text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-white cursor-pointer"
+                      className="w-full flex items-center gap-1.5 px-4 pt-2.5 pb-1 text-[10px] font-semibold uppercase tracking-wider text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer"
                     >
                       <ChevronDown className={`w-3.5 h-3.5 shrink-0 transition-transform ${aberto ? '' : '-rotate-90'}`} />
                       <span className="truncate">{g}</span>
-                      <span className="ml-auto text-[10px] font-normal text-stone-400">{doGrupo.length}</span>
+                      <span className="ml-auto text-[10px] font-normal text-blue-400">{doGrupo.length}</span>
                     </button>
                     {aberto && <div className="pl-3">{doGrupo.map((s) => botao(`chat:${s.id}`, s.nome, MessagesSquare, rec))}</div>}
                   </div>
@@ -167,7 +167,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ sistemas, ativo, onAbrir, usua
             {rec ? (
               <div className="mx-4 mb-2 border-t border-stone-200 dark:border-stone-800" />
             ) : (
-              <div className="px-4 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-400">Cadastros</div>
+              <div className="px-4 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-blue-500 dark:text-blue-400">Cadastros</div>
             )}
             {CADASTROS.map((c) => botao(`crud:${c.id}`, c.label, c.icone, rec))}
             {botao('ecossistema', 'Fluxograma', Network, rec)}
@@ -425,12 +425,12 @@ const PASSOS_CHAVE: [string, React.ReactNode][] = [
   ['Crie a sua conta', <>Acesse <b>console.anthropic.com</b> e crie uma conta (ou entre na sua, se já tiver).</>],
   ['Coloque créditos', <>Em <b>Settings › Billing</b>, cadastre o cartão e compre créditos. As conversas são cobradas nesse saldo; sem saldo, elas param.</>],
   ['Abra as chaves', <>No menu, vá em <b>Settings › API keys</b>.</>],
-  ['Crie a chave', <>Clique em <b>Create Key</b> e dê um nome, por exemplo <i>autosuporte</i>.</>],
+  ['Crie a chave', <>Clique em <b>Create Key</b> e dê um nome, por exemplo <i>bm-help</i>.</>],
   ['Copie na hora', <>A chave começa com <b>sk-ant-</b> e só aparece completa uma vez. Se perder, apague e crie outra.</>],
   [
     'Cole aqui',
     <>
-      Cole a chave no campo <b>Chave da Anthropic</b> e clique em <b>Salvar</b>. Na primeira conversa, o autoSuporte prepara o agente na sua conta (leva alguns
+      Cole a chave no campo <b>Chave da Anthropic</b> e clique em <b>Salvar</b>. Na primeira conversa, o bm-help prepara o agente na sua conta (leva alguns
       segundos a mais).
     </>,
   ],

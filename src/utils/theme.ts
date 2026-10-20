@@ -1,6 +1,6 @@
 export type ThemeMode = 'light' | 'dark';
 
-const STORAGE_KEY = 'autosuporte_tema';
+const STORAGE_KEY = 'bm-help_tema';
 
 export function getInitialTheme(): ThemeMode {
   if (typeof window === 'undefined') return 'light';

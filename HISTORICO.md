@@ -2,6 +2,11 @@
 
 Mais recente primeiro. PATCH a cada envio ao GitHub; MAJOR/MINOR só quando pedido.
 
+## 0.0.14 — 2026-10-20
+
+- Nome: autoSuporte passa a se chamar bm-help (telas, título, pacote, chaves do navegador e ambiente da Anthropic). Banco de dados, projeto da Vercel e a chave de cifra continuam com o nome antigo.
+- Menu: cabeçalhos (Sistemas, Cadastros e grupos) sempre em maiúsculas, em azul.
+
 ## 0.0.13 — 2026-10-06
 
 - Menu: o grupo do sistema aberto também recolhe ao clicar (antes ficava sempre aberto).
